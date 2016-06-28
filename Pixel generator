@@ -1,0 +1,104 @@
+package solid1;
+
+import java.util.Scanner;
+
+public class PIXEL {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		double x=0,y=0,z=0;
+		double	tempx,tempy,tempz;
+		
+		Scanner s = new Scanner(System.in);
+		
+		System.out.println("Enter no.of partions ");
+		double n=s.nextDouble();
+		double l=2/n;
+		//plane1 top one
+		System.out.println("TOP PLANE");
+		y=1;
+		x=-1;
+		z=-1;
+		for(int i=0;i<n;i++){
+		tempz=z;
+		for(int j=0;j<n;j++){
+		tempx=x;
+		System.out.println("x coordinate:"+(tempx+(l/2))+" z coordinat:"+(tempz+(l/2))+" y coordinate:1");
+		x=x+l;
+		
+		}
+		x=-1;
+		z=z+l;
+		}
+		
+		//plane 2 front one
+		System.out.println("FRONT PLANE");
+		z=1;
+		x=-1;
+		y=0;
+		for(int i = 0;i<n/2;i++){
+			tempy=y;
+			for(int j=0;j<n;j++){
+				tempx=x;
+				System.out.println("xcoordinate:"+(tempx+(l/2))+"y coordinate:"+(tempy+(l/2))+"z Coordinate:1");
+				x=x+l;
+			}
+			x=-1;
+			y=y+l;
+				
+		}
+		
+		//plane 3 side right
+		System.out.println("RIGHT PLANE");
+		x=1;
+		z=-1;
+		y=0;
+		for(int i = 0;i<n/2;i++){
+			tempy=y;
+			for(int j=0;j<n;j++){
+				tempz=z;
+				System.out.println("xcoordinate:1"+" y coordinate:"+(tempy+(l/2))+"z Coordinate:"+(tempz+(l/2)));
+				z=z+l;
+			}
+			z=-1;
+			y=y+l;
+				
+		}
+		
+		//plane 4 side back
+		System.out.println("BACK PLANE");
+		z=-1;
+		x=-1;
+		y=0;
+		for(int i = 0;i<n/2;i++){
+			tempy=y;
+			for(int j=0;j<n;j++){
+				tempx=x;
+				System.out.println("xcoordinate:"+(tempx+(l/2))+"y coordinate:"+(tempy+(l/2))+"z Coordinate:-1");
+				x=x+l;
+			}
+			x=-1;
+			y=y+l;
+				
+		}
+		//plane 5 side left
+		System.out.println("LEFT PLANE");
+				x=-1;
+				z=-1;
+				y=0;
+				for(int i = 0;i<n/2;i++){
+					tempy=y;
+					for(int j=0;j<n;j++){
+						tempz=z;
+						System.out.println("xcoordinate:-1"+" y coordinate:"+(tempy+(l/2))+"z Coordinate:"+(tempz+(l/2)));
+						z=z+l;
+					}
+					z=-1;
+					y=y+l;
+						
+				}
+				
+		
+	}
+
+}
